@@ -1,0 +1,12 @@
+[Unit]
+Description=Tuya energy monitor service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=exec
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=python3 /home/pi/TuyaEnergyScan.py
+[Install]
+WantedBy=multi-user.target
